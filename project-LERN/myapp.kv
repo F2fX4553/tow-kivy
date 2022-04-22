@@ -1,0 +1,261 @@
+WindowManger:
+    MineWindow:
+    SucendWindow:
+    ErrorWindow:
+    Python:
+    JavaScript:
+    Bash:
+    Php:
+    Css:
+    Html:
+<MineWindow>:
+    name : "main"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:3
+            Image:
+
+                source: "images/SIBNA.png"
+                pos_hint:{'top':1}
+
+            Label:
+                text: "Enter Your UserName"
+                size_hint: (0.1,0.3)
+                font_size: 25
+            TextInput:
+                text: "SIBNA"
+                id : user
+                multiline:False
+                font_size : 22
+                size_hint:(0.1,0.1)
+                pading : 10
+
+        Button:
+            text: "Login"
+            size_hint:(0.1,0.1)
+            background_color:(170/255, 193/255, 255, 1)
+            on_release:
+                app.root.current = "sucend" if user.text == "SIBNA" else "error"
+                root.manager.transition.direction = "up"
+
+<SucendWindow>:
+    name: "sucend"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:2
+
+            Image:
+                source: "images/Design.jpeg"
+            Label:
+                text : "Software Developer"
+                font_size: 25
+
+        GridLayout:
+            cols:3
+            rows:3
+            Button:
+                text: "Python"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "python"
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "JavaScript"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "javascript"
+                    root.manager.transition.direction = "up"
+            Button:
+                text: "Bash"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "bash"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "php"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "php"
+                    root.manager.transition.direction = "right"
+            Button:
+                text: "Css"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "css"
+                    root.manager.transition.direction = "down"
+            Button:
+                text: "Html5"
+                size_hint: (0.1,0.1)
+                font_size: 25
+                background_color:(147/255, 161/255, 255/255, 0.8)
+                on_release:
+                    app.root.current = "html"
+                    root.manager.transition.direction = "left"
+        Button:
+            text: 'Go Back'
+            size_hint:(0.1,0.3)
+            background_color:(170/255, 193/255, 255, 1)
+            on_release:
+                app.root.current = "main"
+                root.manager.transition.direction = "down"
+
+<ErrorWindow>:
+    name: 'error'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/Missing.jpg"
+        Label:
+            text: "UserName Encorect * Error *"
+            font_size:25
+        Button:
+            text: 'Try Again'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "main"
+
+<Python>:
+    name: 'python'
+    GridLayout:
+        cols:1
+        rows:5
+        Image:
+            source: "images/python.png"
+        Label:
+            text: "What is The Language of Python?"
+            font_size:25
+            bold: True
+        Image:
+            source: "images/Django.jpg"
+
+
+
+        Label:
+            pos_hint:{'x':0.33,'y':0.1}
+            text:" Python is an interpreted, object-oriented, high-level programming language with dynamic \n semantics Its high-level built in data structures, combined with dynamic typing and dynamic\n binding, make it very attractive for Rapid Application Development, as well as for use as a\n scripting or glue language to connect existing components together. Python's simple, easy to\n learn syntax emphasizes readability and therefore reduces the cost of program maintenance. \n Python supports modules and packages, which encourages program modularity and code reuse.\n The Python interpreter and the extensive standard library are available in source or binary \n form without charge for all major platforms, and can be freely distributed."
+            bold: True
+            font_size:9
+
+
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
+<Bash>:
+    name: 'bash'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/bash.png"
+        Label:
+            text: "Learn bash"
+            font_size:25
+            bold: True
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
+
+<Php>:
+    name: 'php'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/php.png"
+        Label:
+            text: "Learn Php"
+            font_size:25
+            bold: True
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
+
+<Css>:
+    name: 'css'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/css.png"
+        Label:
+            text: "Learn Css"
+            font_size:25
+            bold: True
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
+
+<Html>:
+    name:'html'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/html.png"
+        Label:
+            text: "Learn html"
+            font_size:25
+            bold: True
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
+
+<JavaScript>:
+    name: 'javascript'
+    GridLayout:
+        cols:1
+        rows:3
+        Image:
+            source: "images/js.png"
+        Label:
+            text: "Learn JavaScript"
+            font_size:25
+            bold: True
+        Button:
+            text: 'Back'
+            size_hint:(0.1,0.2)
+            background_color:(170/255, 193/255, 255, 1)
+
+            on_release:
+                app.root.current= "sucend"
+
